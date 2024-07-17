@@ -74,15 +74,15 @@
           <!-- Job Listing 1: Software Engineer -->
           <div class="rounded-lg shadow-md bg-white">
             <div class="p-4">
-              <h2 class="text-xl font-semibold">Software Engineer</h2>
+              <h2 class="text-xl font-semibold">Senior Software Engineer</h2>
               <p class="text-gray-700 text-lg mt-2">
                 We are seeking a skilled software engineer to develop
                 high-quality software solutions.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $80,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱80,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> New York
+                  <strong>Location:</strong> Pasig, Metro Manila
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Local</span
@@ -110,9 +110,9 @@
                 marketing campaigns.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $70,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱40,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> San Francisco
+                  <strong>Location:</strong> Cebu City, Cebu
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Remote</span
@@ -134,15 +134,15 @@
           <!-- Job Listing 3: Web Developer -->
           <div class="rounded-lg shadow-md bg-white">
             <div class="p-4">
-              <h2 class="text-xl font-semibold">Web Developer</h2>
+              <h2 class="text-xl font-semibold">Entry Level Web Developer</h2>
               <p class="text-gray-700 text-lg mt-2">
-                Join our team as a Web Developer and create amazing web
-                applications.
+                Join our team as an Entry Level Web Developer and create amazing web
+                applications. We provide training for 1 month.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $75,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱20,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> Los Angeles
+                  <strong>Location:</strong> Bacoor, Cavite
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Local</span
@@ -170,9 +170,9 @@
                 insights.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $65,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱50,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> Chicago
+                  <strong>Location:</strong> Angeles, Pampanga
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Remote</span
@@ -200,9 +200,9 @@
                 life.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $60,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱35,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> Miami
+                  <strong>Location:</strong> Quezon City, Metro Manila
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Local</span
@@ -220,7 +220,8 @@
               </a>
             </div>
           </div>
-
+          
+          <!-- Job Listing 6: Data Scientist -->
           <div class="rounded-lg shadow-md bg-white">
             <div class="p-4">
               <h2 class="text-xl font-semibold">Data Scientist</h2>
@@ -229,9 +230,9 @@
                 generate insights.
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> $90,000</li>
+                <li class="mb-2"><strong>Salary:</strong> ₱75,000</li>
                 <li class="mb-2">
-                  <strong>Location:</strong> Seattle
+                  <strong>Location:</strong> Makati, Metro Manila
                   <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Remote</span
