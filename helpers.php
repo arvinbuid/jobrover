@@ -47,3 +47,31 @@ function loadPartial($partial)
     echo "File {$partial} does not exist.";
   }
 }
+
+/**
+ * Inspect a value(s)
+ *
+ * @param string $value
+ * @return void
+ */
+
+function inspectValue($value)
+{
+  echo '<pre>';
+  var_dump($value);
+  echo '</pre>';
+}
+
+/**
+ * Inspect a value(s) and die
+ *
+ * @param string $value
+ * @return void
+ */
+
+function inspectAndDie($value)
+{
+  echo '<pre>';
+  die(var_dump($value));
+  echo '</pre>';
+}
