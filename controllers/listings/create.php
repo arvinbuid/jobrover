@@ -1,5 +1,5 @@
 <?php
 
-echo 'Create a Job Listing';
+loadView('listings/create');
 
 ?>
