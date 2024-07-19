@@ -8,7 +8,7 @@ class Router
    * Add a new route
    *
    * @param string $method
-   * @param strig $uri
+   * @param string $uri
    * @param string $controller
    * @return void
    */
