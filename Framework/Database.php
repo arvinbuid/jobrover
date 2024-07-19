@@ -37,7 +37,7 @@ class Database
     }
   }
 
-  /**
+  /** 
    * Query the database
    *
    * @param string $query
