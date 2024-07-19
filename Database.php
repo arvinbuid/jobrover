@@ -26,7 +26,7 @@ class Database
         $options
       );
 
-      echo 'Connected to database successfully.';
+      // echo 'Connected to database successfully.';
     } catch (PDOException $e) {
       throw new Exception("Database connection failed: {$e->getMessage()}");
     }
@@ -36,15 +36,22 @@ class Database
    * Query the database
    *
    * @param string $query
+   * @param array $params
    *
    * @return PDOStament
    * @throws PDOException
    */
 
-  public function query($query)
+  public function query($query, $params = [])
   {
     try {
       $sth = $this->conn->prepare($query);
+
+      // Bind named params
+      foreach ($params as $param => $value) {
+        $sth->bindValue(':' . $param, $value);
+      }
+
       $sth->execute();
       return $sth;
     } catch (PDOException $e) {
