@@ -15,7 +15,7 @@ class Database
 
     $options = [
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
     ];
 
     try {
@@ -26,7 +26,7 @@ class Database
         $options
       );
 
-      echo 'Connected Succesfully';
+      echo 'Connected to database successfully.';
     } catch (PDOException $e) {
       throw new Exception("Database connection failed: {$e->getMessage()}");
     }

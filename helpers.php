@@ -19,11 +19,12 @@ function basePath($path = '')
  * @return void
  */
 
-function loadView($view)
+function loadView($view, $array = [])
 {
   $viewPath = basePath("views/{$view}.view.php");
 
   if (file_exists($viewPath)) {
+    extract($array);
     require $viewPath;
   } else {
     echo "File {$view} does not exist.";
@@ -74,4 +75,16 @@ function inspectAndDie($value)
   echo '<pre>';
   die(var_dump($value));
   echo '</pre>';
+}
+
+/**
+ * Format salary
+ *
+ * @param string $salary
+ * @param string Formatted Salary
+ */
+
+function formatSalary($salary)
+{
+  return '₱' . number_format(floatval($salary));
 }
