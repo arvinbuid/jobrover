@@ -42,6 +42,7 @@ class ListingController
   /**
    * Show a single listing
    *
+   * @param $params
    * @return void
    */
   public function show($params)
@@ -71,8 +72,6 @@ class ListingController
    *
    * @return void
    */
-
-  // array_intersect_key, array_flip
 
   public function store()
   {
@@ -156,5 +155,34 @@ class ListingController
 
       redirect('/listings');
     }
+  }
+
+  /**
+   * Delete a listing
+   *
+   * @param $params
+   * @return void
+   */
+
+  public function destroy($params)
+  {
+    $id = $params['id'];
+
+    $params = [
+      'id' => $id,
+    ];
+
+    $listing = $this->db
+      ->query('SELECT * FROM listings WHERE id = :id', $params)
+      ->fetch();
+
+    if (!$listing) {
+      ErrorController::notFound('Listing not found.');
+    }
+
+    // make DELETE command if $listing exists
+    $this->db->query('DELETE FROM listings WHERE id = :id', $params);
+
+    redirect('/listings');
   }
 }
