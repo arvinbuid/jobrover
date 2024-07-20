@@ -47,6 +47,15 @@
       <div class="mb-4">
         <input
           type="text"
+          name="tags"
+          placeholder="Tags"
+          class="w-full px-4 py-2 border rounded focus:outline-none"
+          value="<?= $listing['tags'] ?? '' ?>"
+        />
+      </div>
+      <div class="mb-4">
+        <input
+          type="text"
           name="requirements"
           placeholder="Requirements"
           class="w-full px-4 py-2 border rounded focus:outline-none"

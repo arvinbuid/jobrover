@@ -97,7 +97,14 @@ class ListingController
 
     $newListingData = array_map('sanitize', $newListingData);
 
-    $requiredFields = ['title', 'description', 'email', 'city', 'state'];
+    $requiredFields = [
+      'title',
+      'description',
+      'salary',
+      'email',
+      'city',
+      'state',
+    ];
 
     $errors = [];
 
@@ -106,7 +113,7 @@ class ListingController
         empty($newListingData[$field]) ||
         !Validation::string($newListingData[$field])
       ) {
-        $errors[$field] = ucfirst($field) . ' is required!';
+        $errors[$field] = ucfirst($field) . ' is required.';
       }
     }
 
@@ -116,7 +123,38 @@ class ListingController
         'listing' => $newListingData,
       ]);
     } else {
-      echo 'Success';
+      // Submit data
+
+      // $this->db->query(
+      //   'INSERT INTO listings (title, description, salary, tags, company, address, city, state, phone, email, requirements, benefits, user_id) VALUES (:title, :description, :salary, :tags, :company, :address, :city, :state, :phone, :email, :requirements, :benefits, :user_id',
+      //   $newListingData
+      // );
+
+      $fields = [];
+
+      foreach ($newListingData as $field => $value) {
+        $fields[] = $field;
+      }
+
+      $fields = implode(', ', $fields);
+
+      $values = [];
+
+      foreach ($newListingData as $field => $value) {
+        // Convert empty strings into null
+        if ($value === '') {
+          $newListingData[$field] = null;
+        }
+        $values[] = ':' . $field; // placeholder
+      }
+
+      $values = implode(', ', $values);
+
+      $query = "INSERT INTO listings ({$fields}) VALUES ({$values})";
+
+      $this->db->query($query, $newListingData);
+
+      redirect('/listings');
     }
   }
 }
