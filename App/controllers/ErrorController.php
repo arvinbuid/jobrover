@@ -9,10 +9,10 @@ class ErrorController
    *
    * @return void
    */
-  public static function notFound($status, $message = 'Resource not found.')
+  public static function notFound($message = 'Resource not found.')
   {
     loadView('error', [
-      'status' => $status,
+      'status' => '404',
       'message' => $message,
     ]);
   }
@@ -22,11 +22,10 @@ class ErrorController
    * @return void
    */
   public static function notAuthorized(
-    $status,
     $message = 'Unauthorized resource access.'
   ) {
     loadView('error', [
-      'status' => $status,
+      'status' => '403',
       'message' => $message,
     ]);
   }

@@ -1,6 +1,5 @@
 <?php loadPartial('head'); ?>
 <?php loadPartial('navbar'); ?>
-<?php loadPartial('showcase-search'); ?>
 <?php loadPartial('top-banner'); ?>
 
 <!-- Post a Job Form Box -->
