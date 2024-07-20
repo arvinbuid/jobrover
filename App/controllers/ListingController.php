@@ -212,8 +212,6 @@ class ListingController
       return;
     }
 
-    inspectAndDie($listing);
-
     loadView('listings/edit', [
       'listing' => $listing,
     ]);

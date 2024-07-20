@@ -30,7 +30,7 @@
           placeholder="Job Description"
           class="w-full px-4 py-2 border rounded focus:outline-none"
           value="<?= $listing->description ?? '' ?>"
-        ></textarea>
+        ><?= $listing->description ?></textarea>
       </div>
       <div class="mb-4">
         <input
@@ -127,7 +127,7 @@
       <button
         class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 my-3 rounded focus:outline-none"
       >
-        Save
+        Update
       </button>
       <a
         href="/listings/<?= $listing->id ?>"
