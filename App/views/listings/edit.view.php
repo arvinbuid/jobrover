@@ -6,16 +6,18 @@
 <section class="flex justify-center items-center mt-20">
   <div class="bg-white p-8 rounded-lg shadow-md w-full md:w-600 mx-6">
     <h2 class="text-4xl text-center font-bold mb-4">Edit Job Listing</h2>
-    <form method="POST" action="/listings">
-      <h2 class="text-2xl font-bold mb-6 text-center text-gray-500">Job Info</h2>
+    <form method="POST" action="/listings/<?= $listing->id ?>">
 
+      <!-- Hidden Input-->
+      <input type="hidden" name="_method" value="PUT">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-500">Job Info</h2>
       <?php if (isset($errors)): ?>
         <?php foreach ($errors as $error): ?>
-          <div class="bg-red-100 p-2 my-4"><?= $error ?></div>
+          <div class="bg-red-100 p-3 my-4"><?= $error ?></div>
         <?php endforeach; ?>
       <?php endif; ?>
       
-      <div class="mb-4">
+      <div class="mb-4">  
         <input
           type="text"
           name="title"
