@@ -12,7 +12,7 @@ class Session
   public static function start()
   {
     // Check if no session available
-    if (session_status() === PHP_SESSION_NONE) {
+    if (session_status() == PHP_SESSION_NONE) {
       session_start();
     }
   }
