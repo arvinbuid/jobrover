@@ -82,10 +82,39 @@ class UserController
         ],
       ]);
       exit();
-    } else {
-      echo 'Success';
     }
 
-    inspectAndDie($errors);
+    // Check is email exists
+    $params = [
+      'email' => $email,
+    ];
+
+    $user = $this->db
+      ->query('SELECT * FROM users WHERE email = :email', $params)
+      ->fetch();
+
+    if ($user) {
+      $errors['email'] = 'The email is already taken.';
+      loadView('users/register', [
+        'errors' => $errors,
+      ]);
+      exit();
+    }
+
+    // Create user account
+    $params = [
+      'name' => $name,
+      'email' => $email,
+      'city' => $city,
+      'state' => $state,
+      'password' => password_hash($password, PASSWORD_DEFAULT),
+    ];
+
+    $this->db->query(
+      'INSERT INTO users (name, email, city, state, password) VALUES (:name, :email, :city, :state, :password)',
+      $params
+    );
+
+    redirect('/');
   }
 }
