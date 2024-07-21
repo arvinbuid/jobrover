@@ -11,10 +11,11 @@
     <form method="POST" action="/auth/login">
       <div class="mb-4">
         <input
-          type="email"
+          type="text"
           name="email"
           placeholder="Email Address"
           class="w-full px-4 py-2 border rounded focus:outline-none"
+          value="<?= $user['email'] ?? '' ?>"
         />
       </div>
       <div class="mb-4">
@@ -23,6 +24,7 @@
           name="password"
           placeholder="Password"
           class="w-full px-4 py-2 border rounded focus:outline-none"
+          value="<?= $user['password'] ?? '' ?>"
         />
       </div>
       <button

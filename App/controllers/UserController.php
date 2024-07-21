@@ -116,6 +116,7 @@ class UserController
     // Get new user ID
     $userId = $this->db->conn->lastInsertId();
 
+    // Set user session
     Session::set('user', [
       'id' => $userId,
       'name' => $name,
@@ -172,12 +173,57 @@ class UserController
     if (!empty($errors)) {
       loadView('users/login', [
         'errors' => $errors,
+        'user' => [
+          'email' => $email,
+          'password' => $password,
+        ],
       ]);
+      exit();
     }
 
-    // Check for email
+    // Check for email in database
+    $params = [
+      'email' => $email,
+    ];
 
+    $user = $this->db
+      ->query('SELECT * FROM users WHERE email = :email', $params)
+      ->fetch();
 
-    // Check for password
+    if (!$user) {
+      $errors['email'] = 'Incorrect credentials.';
+      loadView('users/login', [
+        'errors' => $errors,
+        'user' => [
+          'email' => $email,
+          'password' => $password,
+        ],
+      ]);
+      exit();
+    }
+
+    // Check for password in database
+    if (!password_verify($password, $user->password)) {
+      $errors['email'] = 'Incorrect credentials.';
+      loadView('users/login', [
+        'errors' => $errors,
+        'user' => [
+          'email' => $email,
+          'password' => $password,
+        ],
+      ]);
+      exit();
+    }
+
+    // Set user session
+    Session::set('user', [
+      'id' => $user->id,
+      'name' => $user->name,
+      'email' => $user->email,
+      'city' => $user->city,
+      'state' => $user->state,
+    ]);
+
+    redirect('/');
   }
 }
