@@ -49,7 +49,7 @@ class Session
    */
   public static function has($key)
   {
-    return isset($key);
+    return isset($_SESSION[$key]);
   }
 
   /**
