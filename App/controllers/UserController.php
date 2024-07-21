@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Framework\Database;
 use Framework\Validation;
+use Framework\Session;
 
 class UserController
 {
@@ -20,7 +21,6 @@ class UserController
    *
    * @return void
    */
-
   public function login()
   {
     loadView('users/login');
@@ -31,7 +31,6 @@ class UserController
    *
    * @return void
    */
-
   public function create()
   {
     loadView('users/register');
@@ -42,7 +41,6 @@ class UserController
    *
    * @return void
    */
-
   public function store()
   {
     $name = $_POST['name'];
@@ -114,6 +112,17 @@ class UserController
       'INSERT INTO users (name, email, city, state, password) VALUES (:name, :email, :city, :state, :password)',
       $params
     );
+
+    // Get new user ID
+    $userId = $this->db->conn->lastInsertId();
+
+    Session::set('user', [
+      'id' => $userId,
+      'name' => $name,
+      'email' => $email,
+      'city' => $city,
+      'state' => $state,
+    ]);
 
     redirect('/');
   }

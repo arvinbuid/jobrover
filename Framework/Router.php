@@ -15,7 +15,6 @@ class Router
    * @param string $action
    * @return void
    */
-
   public function registerRoute($method, $uri, $action)
   {
     list($controller, $controllerMethod) = explode('@', $action);
@@ -35,7 +34,6 @@ class Router
    * @param string $controller
    * @return void
    */
-
   public function get($uri, $controller)
   {
     $this->registerRoute('GET', $uri, $controller);
@@ -48,7 +46,6 @@ class Router
    * @param string $controller
    * @return void
    */
-
   public function post($uri, $controller)
   {
     $this->registerRoute('POST', $uri, $controller);
@@ -61,7 +58,6 @@ class Router
    * @param string $controller
    * @return void
    */
-
   public function put($uri, $controller)
   {
     $this->registerRoute('PUT', $uri, $controller);
@@ -74,7 +70,6 @@ class Router
    * @param string $controller
    * @return void
    */
-
   public function delete($uri, $controller)
   {
     $this->registerRoute('DELETE', $uri, $controller);
@@ -87,7 +82,6 @@ class Router
    * @param string $method
    * @return void
    */
-
   public function route($uri)
   {
     $requestMethod = $_SERVER['REQUEST_METHOD'];

@@ -16,6 +16,7 @@ class ErrorController
       'message' => $message,
     ]);
   }
+
   /**
    * 403 not authorized
    *

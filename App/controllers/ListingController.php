@@ -72,7 +72,6 @@ class ListingController
    *
    * @return void
    */
-
   public function store()
   {
     $allowedFields = [
@@ -124,11 +123,6 @@ class ListingController
     } else {
       // Submit data
 
-      // $this->db->query(
-      //   'INSERT INTO listings (title, description, salary, tags, company, address, city, state, phone, email, requirements, benefits, user_id) VALUES (:title, :description, :salary, :tags, :company, :address, :city, :state, :phone, :email, :requirements, :benefits, :user_id',
-      //   $newListingData
-      // );
-
       $fields = [];
 
       foreach ($newListingData as $field => $value) {
@@ -163,7 +157,6 @@ class ListingController
    * @param $params
    * @return void
    */
-
   public function destroy($params)
   {
     $id = $params['id'];
@@ -223,7 +216,6 @@ class ListingController
    * @param array $params
    * @return void
    */
-
   public function update($params)
   {
     $id = $params['id'];

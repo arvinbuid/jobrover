@@ -12,7 +12,6 @@ class Validation
    * @param int $max
    * @return void
    */
-
   public static function string($value, $min = 1, $max = INF)
   {
     if (is_string($value)) {
@@ -30,7 +29,6 @@ class Validation
    * @param string $value
    * @return mixed
    */
-
   public static function email($value)
   {
     $value = trim($value);
@@ -45,7 +43,6 @@ class Validation
    * @param string $value2
    * @return bool
    */
-
   public static function match($value1, $value2)
   {
     $value1 = trim($value1);

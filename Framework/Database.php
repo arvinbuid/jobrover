@@ -37,7 +37,7 @@ class Database
     }
   }
 
-  /** 
+  /**
    * Query the database
    *
    * @param string $query
@@ -46,7 +46,6 @@ class Database
    * @return PDOStament
    * @throws PDOException
    */
-
   public function query($query, $params = [])
   {
     try {
