@@ -370,6 +370,11 @@ class ListingController
 
     $listings = $this->db->query($query, $params)->fetchAll();
 
+    if (empty($keywords) && empty($location)) {
+      ErrorController::notFound('Please provide a search keyword or location.');
+      exit();
+    }
+
     if (!$listings) {
       ErrorController::notFound('Search result not found.');
       exit();

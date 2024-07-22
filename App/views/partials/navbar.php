@@ -10,7 +10,7 @@ use Framework\Session; ?>
       <!-- Check if have user session -->
       <?php if (Session::has('user')): ?>
       <div class="flex justify-between items-center gap-4 ">
-         <div class="text-blue-500 text-base links">
+         <div class="text-blue-300 text-base links">
            Welcome <?php echo Session::get('user')['name']; ?>
          </div>
          <form method="POST" action="/auth/logout" class="flex gap-4 links">
