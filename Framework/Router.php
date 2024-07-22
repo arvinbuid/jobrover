@@ -146,6 +146,6 @@ class Router
       }
     }
 
-    ErrorController::notFound('404');
+    ErrorController::notFound('Requested resource not found.');
   }
 }

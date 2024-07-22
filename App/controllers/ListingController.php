@@ -370,6 +370,15 @@ class ListingController
 
     $listings = $this->db->query($query, $params)->fetchAll();
 
-    inspectAndDie($listings);
+    if (!$listings) {
+      ErrorController::notFound('Search result not found.');
+      exit();
+    }
+
+    loadView('/listings/index', [
+      'listings' => $listings,
+      'keywords' => $keywords,
+      'location' => $location,
+    ]);
   }
 }
