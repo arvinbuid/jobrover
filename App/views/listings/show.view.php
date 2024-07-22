@@ -61,12 +61,20 @@ use Framework\Authorization; ?>
 <section class="container mx-auto p-4">
   <h2 class="text-xl font-semibold mb-4">Job Details</h2>
   <div class="rounded-lg shadow-md bg-white p-4">
-    <h3 class="text-lg font-semibold mb-2 text-blue-500">Job Requirements</h3>
-    <p>
-      <?= $listing->requirements ?>
-    </p>
+    <h3 class="text-lg font-semibold mb-2 text-blue-500">Company</h3>
+     <p>
+       <?= $listing->company ?>
+     </p>
+    <h3 class="text-lg font-semibold mt-4 mb-2 text-blue-500">Job Requirements</h3>
+     <p>
+       <?= $listing->requirements ?>
+     </p>
     <h3 class="text-lg font-semibold mt-4 mb-2 text-blue-500">Benefits</h3>
     <p><?= $listing->benefits ?></p>
+    <h3 class="text-lg font-semibold mt-4 mb-2 text-blue-500">Contact Number</h3>
+    <p><?= $listing->phone ?></p>
+    <h3 class="text-lg font-semibold mt-4 mb-2 text-blue-500">Email Address</h3>
+    <p><?= $listing->email ?></p>
   </div>
   <p class="my-5">Put "Job Application" as the subject of your email and attach your resume.</p>
   <a
