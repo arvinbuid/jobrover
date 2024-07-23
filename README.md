@@ -1,3 +1,3 @@
 # Jobrover Job Listing Project
 
-url: jobrover.tech
+url: https://jobrover.tech
